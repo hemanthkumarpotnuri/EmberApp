@@ -1,0 +1,24 @@
+
+<div class="container">
+	<form {{action 'createOrder' model on='submit'}} class='order-form' >
+		<div class="form-group row">
+			<label for = 'name' class="col-sm-3 col-form-label">Name</label>
+			<div class="col-sm-9">
+				{{input type="text" id="name" class="form-control" value = model.name}}
+			</div>
+		</div>
+		{{#each model.items as |item|}}
+		<div class="form-group row">
+			<label class="col-sm-3 col-form-label">	{{item.title}} </label>
+			<div class="col-sm-9">
+				{{input type="number" min="0" class="form-control" value = item.quantity}}
+			</div>
+		</div>
+		{{/each}}
+		<div class="form-group row">
+			<div class="offset-sm-2 col-sm-10">
+				<button type="submit" value="Order" class="btn btn-primary">Order</button>
+			</div> 
+		</div>
+	</form>
+</div>

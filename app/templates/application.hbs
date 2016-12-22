@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ember App</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>{{#link-to 'index' class = 'home-link'}}Home{{/link-to}}</li>
+      <li>{{#link-to 'orders' class = 'orders-link'}}Orders{{/link-to}}</li>
+    </ul>
+  </div>
+</nav>
+{{outlet}}

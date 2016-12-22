@@ -1,0 +1,22 @@
+@font-face {
+font-family: Brandon;
+src: url("../fonts/brandon-reg.otf") format("opentype");
+}
+
+@font-face {
+font-family: Brandon-Light;
+src: url("../fonts/brandon-light.otf") format("opentype");
+}
+
+html {
+	font-family: 'Brandon-Light';
+}
+
+.order-table th {
+	/*text-align: left;*/
+}
+
+.order-form {
+	margin: 0 auto;
+	width: 70%;
+}

@@ -1,0 +1,27 @@
+<p>Order {{model.id}} for {{model.name}}</p>
+<p>The order is ready</p>
+<table class='order-table table'>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Quantity</th>
+			<th>Unit Price</th>
+			<th>Cost</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each model.items as |item| }}
+			<tr>
+				<th scope="row">{{item.title}}</th>
+				<td>{{item.quantity}}</td>
+				<td>Rs {{item.unitPrice}}</td>
+				<td>Rs {{item.cost}}</td>
+			</tr>
+		{{/each}}
+		<tr>
+			<th scope="row">Total</th>
+			<td>&nbsp;</td>
+			<td colspan="2">Rs {{model.totalCost}}</td>
+		</tr>
+	</tbody>
+</table>
