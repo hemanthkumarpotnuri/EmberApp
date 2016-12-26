@@ -4,10 +4,10 @@ import Order from 'project/models/order';
 import Product from 'project/models/product';
 
 const products = [
-	Product.create({title : 'Tent', price : 10, description : 'can be used for a camp'}),
-	Product.create({title : 'Box', price : 5, description : 'can be used for packing'}),
-	Product.create({title : 'Nails', price : 2, description : 'can be used for repairing'}),
-	Product.create({title : 'Torch Light', price : 15 , description : 'can be used at night'})
+	Product.create({title : 'Tent', price : 10, description : 'can be used for a camp', imageUrl : '../images/tent.png'}),
+	Product.create({title : 'Box', price : 5, description : 'can be used for packing', imageUrl : '../images/box.png'}),
+	Product.create({title : 'Nails', price : 2, description : 'can be used for repairing', imageUrl : '../images/nails.png'}),
+	Product.create({title : 'Torch Light', price : 15 , description : 'can be used at night', imageUrl : '../images/torch-light.png'})
 ];
 
 const orders =[
@@ -42,6 +42,7 @@ const orders =[
 			   ]
 		})
 	 ];
+var OrderId = 4;
 export default Ember.Service.extend({
 	getOrderById(id){
 		const orders = this.getOrders();
@@ -64,7 +65,8 @@ export default Ember.Service.extend({
 		});
 	},
 	saveOrder(order){
-		order.set('id', 999);
+		OrderId = OrderId + 1;
+		order.set('id', OrderId);
 		orders.pushObject(order);
 	}
 });

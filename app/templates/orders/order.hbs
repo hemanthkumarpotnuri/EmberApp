@@ -3,10 +3,11 @@
 <table class='order-table table'>
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Items</th>
 			<th>Quantity</th>
 			<th>Unit Price</th>
 			<th>Cost</th>
+			<th>Cost%</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,11 +17,13 @@
 				<td>{{item.quantity}}</td>
 				<td>Rs {{item.unitPrice}}</td>
 				<td>Rs {{item.cost}}</td>
+				<td>
+					{{item-percentage itemPrice = item.cost orderPrice = model.totalCost}}
+				</td>
 			</tr>
 		{{/each}}
 		<tr>
-			<th scope="row">Total</th>
-			<td>&nbsp;</td>
+			<th scope="row" colspan="3">Total</th>
 			<td colspan="2">Rs {{model.totalCost}}</td>
 		</tr>
 	</tbody>
